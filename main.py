@@ -1,20 +1,14 @@
-#pip install python-dotenv
-#pip install langchain-openai
-#pip install streamlit
-
-# from dotenv import load_dotenv
-# load_dotenv()
-
 from langchain_openai import ChatOpenAI
-chat_model = ChatOpenAI()
-
-# subject = "AI"
-# result = chat_model.invoke(subject + "에 대한 시를 써줘.")
-# print(result.content)
-
 import streamlit as st
 
+api_key = "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"
+
+# ChatOpenAI 객체 생성 (API 키 전달)
+chat_model = ChatOpenAI(api_key=api_key)
+
+# Streamlit 앱 내용
 st.title("인공지능 시인")
+
 subject = st.text_input("시의 주제를 입력해주세요.")
 st.write("시의 주제 : " + subject)
 
